@@ -78,7 +78,7 @@ if __name__ == '__main__':
         Literal = []
         Literal[False]= true
         uploaded_file = st.sidebar.file_uploader(
-            "上传图片", Literal,type=['png', 'jpeg', 'jpg'])
+            "上传图片", true,type=['png', 'jpeg', 'jpg'])
         if uploaded_file is not None:
             is_valid = True
             with st.spinner(text='资源加载中...'):
