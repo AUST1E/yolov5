@@ -1,0 +1,20 @@
+<!--success.html 显示上传成功后的信息-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Success</title>
+</head>
+<style>
+    #result{
+        width: 100pt;
+        height: 100pt;
+    }
+</style>
+<body>
+<p>File uploaded successfully!</p>
+<p>File Name: <b> {{name}} </b></p>
+<img src=static/detect/exp{{ord}}/{{name}} id="result" />
+<a href="http://127.0.0.1:5000/"><div >点击继续识别</div></a>
+</body>
+</html>

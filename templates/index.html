@@ -1,0 +1,29 @@
+<!--index.html-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>detect</title>
+</head>
+<style>
+    #input_field{
+        width: 40pt;
+        height: 100pt;
+        margin: auto;
+        float: none;
+    }
+    #input_content{
+        text-align: center;
+    }
+</style>
+<body>
+<form action="/success" method="post" enctype="multipart/form-data"><!--enctype必须是这个-->
+    <div id="input_content">
+        <fieldset id="input_field">
+            <input type="file" name="file1" multiple size="150"><!--类型-->
+        </fieldset>
+        <input type="submit" value="上传"><!--提交按钮-->
+    </div>
+</form>
+</body>
+</html>
