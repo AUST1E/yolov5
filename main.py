@@ -74,7 +74,7 @@ if __name__ == '__main__':
     source_index = st.sidebar.selectbox("选择输入", range(
         len(source)), format_func=lambda x: source[x])
 
-   if source_index == 0:
+    if source_index == 0:
         Literal = []
         Literal[False]= true
         uploaded_file = st.sidebar.file_uploader(
