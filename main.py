@@ -81,9 +81,10 @@ if __name__ == '__main__':
             is_valid = True
             with st.spinner(text='资源加载中...'):
                 st.sidebar.image(uploaded_file)
-                picture = Image.open(uploaded_file)
-                picture = picture.save(f'data/images/{uploaded_file.name}')
-                opt.source = f'data/images/{uploaded_file.name}'
+                for uploaded_file in uploaded_files:
+                    picture = Image.open(uploaded_file)
+                    picture = picture.save(f'data/images/{uploaded_file.name}')
+                    opt.source = f'data/images/{uploaded_files.name}'
         else:
             is_valid = False
     else:
