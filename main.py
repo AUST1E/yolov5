@@ -75,12 +75,12 @@ if __name__ == '__main__':
         len(source)), format_func=lambda x: source[x])
 
     if source_index == 0:
-        uploaded_file = st.sidebar.file_uploader(
+        uploaded_files = st.sidebar.file_uploader(
             "上传图片",accept_multiple_files=True,type=['png', 'jpeg', 'jpg'])
-        if uploaded_file is not None:
+        if uploaded_files is not None:
             is_valid = True
             with st.spinner(text='资源加载中...'):
-                st.sidebar.image(uploaded_file)
+                st.sidebar.image(uploaded_files)
                 for uploaded_file in uploaded_files:
                     picture = Image.open(uploaded_file)
                     picture = picture.save(f'data/images/{uploaded_file.name}')
