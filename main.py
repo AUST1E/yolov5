@@ -84,7 +84,7 @@ if __name__ == '__main__':
                 for uploaded_file in uploaded_files:
                     picture = Image.open(uploaded_file)
                     picture = picture.save(f'data/images/{uploaded_file.name}')
-                    opt.source = f'data/images/{uploaded_files.name}'
+                    opt.source = f'data/images/{uploaded_file.name}'
         else:
             is_valid = False
     else:
