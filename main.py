@@ -75,8 +75,6 @@ if __name__ == '__main__':
         len(source)), format_func=lambda x: source[x])
 
     if source_index == 0:
-        Literal = []
-        Literal[True]= True
         uploaded_file = st.sidebar.file_uploader(
             "上传图片",accept_multiple_files=True,type=['png', 'jpeg', 'jpg'])
         if uploaded_file is not None:
