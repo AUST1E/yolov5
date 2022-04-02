@@ -8,7 +8,6 @@ import torch.backends.cudnn as cudnn
 import pymssql
 import datetime
 import matplotlib
-matplotlib.use('TKAgg')
 from matplotlib import pyplot as plt
 from numpy import random
 
