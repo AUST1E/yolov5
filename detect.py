@@ -211,7 +211,6 @@ def detect(opt,save_img=False):
     plt.ylabel("Number of defects")
     plt.legend()
     plt.rcParams['font.sans-serif'] = ['SimHei']
-    time.sleep(300)
     plt.savefig(os.path.join(str(Path(f'{get_detection_folder()}')),'xb.png'))
 
 
