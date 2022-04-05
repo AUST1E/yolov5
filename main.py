@@ -37,7 +37,7 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
     parser.add_argument('--weights', nargs='+', type=str,
-                        default='weights/yolov5s.pt', help='model.pt path(s)')
+                        default='yolov5s.pt', help='model.pt path(s)')
     parser.add_argument('--source', type=str,
                         default='data/images', help='source')
     parser.add_argument('--img-size', type=int, default=640,
