@@ -85,7 +85,7 @@ def detect(opt,save_img=False):
     if device.type != 'cpu':
         model(torch.zeros(1, 3, imgsz, imgsz).to(device).type_as(next(model.parameters())))  # run once
     t0 = time.time()
-    l = 5
+    l = 6
     defects = [0] * l
     for path, img, im0s, vid_cap in dataset:
         img = torch.from_numpy(img).to(device)
@@ -143,12 +143,14 @@ def detect(opt,save_img=False):
                         defects[0] = defects[0] + int(n)
                     elif names[int(c)] == '3 Missing fan screws':
                         defects[1] = defects[1] + int(n)
-                    elif names[int(c)] == '6 board screw model error':
+                    elif names[int(c)] == '5 Loose board screws':
                         defects[2] = defects[2] + int(n)
-                    elif names[int(c)] == '7 Missing board screws':
+                    elif names[int(c)] == '6 board screw model error':
                         defects[3] = defects[3] + int(n)
-                    elif names[int(c)] == '9 Incorrect fan wiring':
+                    elif names[int(c)] == '7 Missing board screws':
                         defects[4] = defects[4] + int(n)
+                    elif names[int(c)] == '9 Incorrect fan wiring':
+                        defects[5] = defects[5] + int(n)
                 # Write results
                 for *xyxy, conf, cls in reversed(det):
                     if save_txt:  # Write to file
@@ -202,10 +204,10 @@ def detect(opt,save_img=False):
 
     print(f'Done. ({time.time() - t0:.3f}s)')
     fig = plt.figure(figsize=(15, 8))
-    x = ('Loose fan screws', 'Missing fan screws', 'Board screw model error', 'Missing board screws', 'Incorrect fan wiring')
+    x = ('Loose fan screws', 'Missing fan screws','Loose board screws', 'Board screw model error', 'Missing board screws', 'Incorrect fan wiring')
     max_defects = max(defects)
     print(max_defects)
-    plt.bar(x, defects, 0.4)
+    plt.bar(x, defects, 0.4, color=['r', 'g', 'b', 'c', 'm', 'y'])
     plt.ylim(0, max_defects * (5/4))
     plt.title("Motherboard quality inspection report")
     plt.xlabel("Defect name")
