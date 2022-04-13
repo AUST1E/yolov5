@@ -34,7 +34,7 @@ if __name__ == '__main__':
     shutil.rmtree(UPLOAD_FOLDER)
     os.mkdir(UPLOAD_FOLDER)
     st.title('基于图像识别的主板质量检测系统')
-
+    st.markdown("<a href='www.baidu.com'>点击</a>",unsafe_allow_html=True)
     parser = argparse.ArgumentParser()
     parser.add_argument('--weights', nargs='+', type=str,
                         default='weights/yolov5s.pt', help='model.pt path(s)')
