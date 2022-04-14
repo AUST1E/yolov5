@@ -2,7 +2,6 @@ from io import StringIO
 import io
 from multiprocessing import connection
 from pathlib import Path
-from tkinter import image_names
 from turtle import width
 import cv2
 from cv2 import VideoCapture
