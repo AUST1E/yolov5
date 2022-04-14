@@ -2,7 +2,6 @@ from io import StringIO
 import io
 from multiprocessing import connection
 from pathlib import Path
-from turtle import width
 import cv2
 from cv2 import VideoCapture
 from cv2 import VideoWriter
