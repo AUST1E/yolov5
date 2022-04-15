@@ -11,7 +11,7 @@ import matplotlib
 import os
 from matplotlib import pyplot as plt
 from numpy import random
-
+from datetime import timedelta
 from models.experimental import attempt_load
 from utils.datasets import LoadStreams, LoadImages
 from utils.general import check_img_size, check_requirements, check_imshow, non_max_suppression, apply_classifier, \
@@ -45,7 +45,7 @@ def detect_image(opt,connect,save_img=False):
         print("Database connection succeeded!")
 
     cursor = connect.cursor()  # 创建一个游标对象,python里的sql语句都要通过cursor来执行
-    now = datetime.datetime.now()
+    now = datetime.datetime.now()+datetime.timedelta(hours=8)
     otherStyleTime = now.strftime("%Y_%m_%d_%H_%M")
 
     fileList = os.listdir(source)  # 待修改文件夹
